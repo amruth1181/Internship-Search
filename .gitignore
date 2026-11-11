@@ -1,0 +1,16 @@
+# Personal data: your filled-in profile and generated applications stay local
+profile.md
+batches/
+
+# LaTeX build output
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Local tooling
+.claude/
+.DS_Store
+__pycache__/
