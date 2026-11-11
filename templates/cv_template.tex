@@ -1,0 +1,107 @@
+%==============================================================================
+%  One-page CV template
+%  Compile with: pdflatex cv_template.tex
+%  Replace everything in CAPITALS / angle brackets with your own details.
+%==============================================================================
+\documentclass[a4paper,10pt]{extarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[left=1.4cm,right=1.4cm,top=0.9cm,bottom=0.9cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\pdfinterwordspaceon
+
+\definecolor{linkblue}{RGB}{20,80,160}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue,
+  pdftitle={Firstname Lastname - CV}, pdfauthor={Firstname Lastname}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+% Section heading: spaced uppercase, thin rule
+\newcommand{\cvsection}[1]{%
+  \vspace{6pt}%
+  {\large\bfseries\textls[60]{\MakeUppercase{#1}}}\par\vspace{-6pt}%
+  \rule{\linewidth}{0.4pt}\par\vspace{2pt}%
+}
+
+\setlist[itemize]{leftmargin=13pt, topsep=1pt, itemsep=1pt, parsep=0pt, label=--}
+
+% \entry{title}{subtitle}{date}
+\newcommand{\entry}[3]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1}\ \ $|$\ \ \textit{#2} & \textit{#3}
+  \end{tabularx}\par}
+
+\newcommand{\skill}[2]{\par\noindent\hangindent=3.9cm\hangafter=1\makebox[3.9cm][l]{#1}{\raggedright #2\par}\vspace{1pt}}
+\newcommand{\gh}[1]{\href{#1}{\textbf{GitHub}}}
+
+\begin{document}
+
+%================================================================== heading ===
+\begin{center}
+  {\fontsize{21}{24}\selectfont\bfseries FIRSTNAME LASTNAME}\\[4pt]
+  Target Role \ $\cdot$ \ Second Role \ $\cdot$ \ \textit{Open to 6-month internships, available immediately}\\[3pt]
+  City, Country \ $\bullet$ \ \href{tel:+00000000000}{+00 0 00 00 00 00} \ $\bullet$ \ \href{mailto:you@example.com}{you@example.com}\\[2pt]
+  \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle} \ $\bullet$ \ \href{https://github.com/your-handle}{github.com/your-handle} \ $\bullet$ \ \href{https://your-site.example}{your-site.example}\\[2pt]
+  Language (level) \ $\bullet$ \ Language (level) \ $|$ \ \textit{Internship agreement provided by Your School}
+\end{center}
+
+%================================================================== profile ===
+\cvsection{Profile}
+Two or three sentences. Lead with the experience closest to the job you are applying for, say what you built and with what, and end with what you care about in the work. Keep every claim something you could explain in an interview.
+
+%=================================================================== skills ===
+\cvsection{Technical Skills}
+\skill{\textbf{Area One}}{Tool, tool, tool, tool (put the posting's tools first)}
+\skill{\textbf{Area Two}}{Tool, tool, tool}
+\skill{\textbf{Programming}}{Language, language, tool, tool}
+\skill{\textbf{Cloud}}{Provider, provider}
+
+%=============================================================== experience ===
+\cvsection{Experience}
+\entry{Job Title}{Company, City, Country}{MM/YYYY -- MM/YYYY}
+\begin{itemize}
+  \item What you built, with which tools, at what scale. Bold \textbf{real numbers} only.
+  \item The most relevant bullet for this posting goes first.
+  \item What you owned in production and how you kept it reliable.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Earlier Role}{Organisation}{MM/YYYY -- MM/YYYY}
+\begin{itemize}
+  \item One or two factual bullets.
+\end{itemize}
+
+%================================================================= projects ===
+\cvsection{Projects}
+\entry{Project Name}{Personal project \ $|$ \ \gh{https://github.com/your-handle/project}}{YYYY}
+\begin{itemize}
+  \item What it does and the design choice you are proud of.
+  \item How it runs (orchestration, tests, CI) and a real result.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Second Project}{Team project \ $|$ \ \gh{https://github.com/your-handle/project-two}}{MM/YYYY -- MM/YYYY}
+\begin{itemize}
+  \item Pick 2--3 projects per posting from your project pool; closest match first.
+\end{itemize}
+
+%================================================================ education ===
+\cvsection{Education}
+\entry{School: Degree Name}{City, Country}{MM/YYYY -- MM/YYYY}
+Rank or grade if it helps you\par
+
+\vspace{4pt}
+\entry{Previous School: Degree}{Country}{MM/YYYY -- MM/YYYY}
+
+\end{document}

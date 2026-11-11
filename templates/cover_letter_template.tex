@@ -1,0 +1,50 @@
+%==============================================================================
+%  One-page cover letter template (matches cv_template.tex)
+%  Compile with: pdflatex cover_letter_template.tex
+%==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[left=2.2cm,right=2.2cm,top=1.8cm,bottom=1.8cm]{geometry}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{linkblue}{RGB}{20,80,160}
+\hypersetup{colorlinks=true, urlcolor=linkblue,
+  pdftitle={Firstname Lastname - Cover Letter}, pdfauthor={Firstname Lastname}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{9pt}
+
+\begin{document}
+
+{\fontsize{17}{20}\selectfont\bfseries FIRSTNAME LASTNAME}\\[3pt]
+City, Country \ $\bullet$ \ \href{mailto:you@example.com}{you@example.com} \ $\bullet$ \ +00 0 00 00 00 00\\
+\rule{\linewidth}{0.4pt}
+
+\today
+
+Company Name\\
+\textbf{Re: Exact Role Title (reference if any)}
+
+Dear Hiring Team,
+
+Opening, two sentences: what the role is and the one concrete reason you fit it.
+
+Proof: one real story from a job or project that is close to this role's daily work. What you built, with what, and what happened. Real numbers only.
+
+Why this team: one specific thing from the job description, connected to something you have done.
+
+Honest gap, if there is one: name it in a sentence and say what you are doing about it.
+
+I am available immediately for a six-month internship, with an agreement provided by Your School. I would be glad to talk through any of this.
+
+Kind regards,\\
+Firstname Lastname
+
+\end{document}
